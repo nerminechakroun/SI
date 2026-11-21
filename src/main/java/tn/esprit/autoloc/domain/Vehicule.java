@@ -1,0 +1,29 @@
+package tn.esprit.autoloc.domain;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name="Vehicule")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Vehicule {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idVehicule;
+   private String immatriculation;
+   private String modele;
+   private String marque;
+   private BigDecimal tarifJournalier;
+   @Enumerated(EnumType.STRING)
+   private StatutVehicule statut;
+   @Enumerated(EnumType.STRING)
+   private CategorieVehicule categorie;
+}
