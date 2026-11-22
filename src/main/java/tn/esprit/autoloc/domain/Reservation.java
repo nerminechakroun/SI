@@ -22,4 +22,10 @@ public class Reservation {
      private LocalDate dateFin;
      @Enumerated(EnumType.STRING)
      private StatutReservation statut;
+     @OneToOne(mappedBy = "reservation",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+     private Contrat contrat;
+     @ManyToOne(fetch = FetchType.LAZY)
+     private Client client;
+     @ManyToOne(fetch = FetchType.LAZY)
+     private Vehicule vehicule;
 }

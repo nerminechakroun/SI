@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name="Equipement")
 @Getter
@@ -17,4 +19,6 @@ public class Equipement {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idEquipement;
     private String libelle;
+    @ManyToMany(mappedBy = "equipements",fetch = FetchType.LAZY)
+    private List<Vehicule> vehicules;
 }
