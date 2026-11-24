@@ -21,7 +21,7 @@ import java.util.List;
 public class Contrat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idClient;
+    private Long id;
     private LocalDate dateSignature;
     private BigDecimal montantTotal;
     private boolean valide;
